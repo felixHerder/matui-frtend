@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { MenuItem, Drawer, IconButton, AppBar, Link, Box, Container, Toolbar, Typography } from '@material-ui/core'
+import React, { useEffect, useState, useContext } from 'react';
+import { Switch, FormControlLabel, MenuItem, Drawer, IconButton, AppBar, Link, Box, Container, Toolbar, Typography } from '@material-ui/core'
 import { Menu } from '@material-ui/icons';
-import { makeStyles } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core';
+import { Context } from '../Context';
 
 const useStyles = makeStyles((theme) => ({
   siteTitle: {
@@ -84,6 +85,7 @@ export default function Navbar() {
         {['home', 'services', 'signup'].map(mopt => (
           <MenuItem key={mopt}>{mopt}</MenuItem>
         ))}
+
       </Box>
     )
   }
@@ -106,10 +108,16 @@ export default function Navbar() {
       </Toolbar>
     );
   }
+  const [theme, updateTheme] = useContext(Context);
   return (
     <Container>
       <AppBar>
         {toggleMenu ? displayToggleMenu() : displayLargeMenu()}
+        <FormControlLabel
+          control={<Switch color="default" onChange={() => updateTheme(!theme)} />}
+          label={theme ? 'Light' : 'Dark'}
+        />
+
       </AppBar>
     </Container>
   )
