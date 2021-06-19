@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 import MainGridItem from './MainGridItem';
 import GridItem from './GridItem';
 
-export default function GridLayout() {
+export default function HomeGridLayout() {
   return (
     <Grid container spacing={3}>
       <Grid item lg={12} sm={12} xs={12}>
