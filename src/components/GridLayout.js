@@ -1,24 +1,9 @@
 import React from 'react';
-import { Grid, Typography, makeStyles } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import MainGridItem from './MainGridItem';
 import GridItem from './GridItem';
 
-const useStyles = makeStyles(theme => ({
-  mainGridItem: {
-    backgroundColor: 'blue'
-  },
-  secondRowFirtsItem: {
-    backgroundColor: 'green'
-  },
-  secondRowSecondItem: {
-    backgroundColor: 'orange'
-  },
-  thirdRow: {
-    backgroundColor: 'pink'
-  }
-}));
 export default function GridLayout() {
-  const classes = useStyles();
   return (
     <Grid container spacing={3}>
       <Grid item lg={12} sm={12} xs={12}>
